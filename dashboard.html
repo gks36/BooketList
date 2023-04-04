@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>My first website</title>
+  <link rel="stylesheet" type="text/css" href="myStyleSheet.css" />
+</head>
+<div id="header">
+<body>
+
+   
+
+    <h2 id="list">My Booket List:</h2></div>
+    <div id="desc">Add new book titles to your booket list, and once you have read them, select the title to remove it!</div>
+	<!-- Checklist container -->
+	<!-- Checklist container -->
+<div id="checklist-container">
+    <!-- Checklist items -->
+    <ul id="checklist-items">
+      <li contenteditable="true">Book 1</li>
+      <li contenteditable="true">Book 2</li>
+      <li contenteditable="true">Book 3</li>
+      <li contenteditable="true">Book 4</li>
+      <li contenteditable="true">Harry Potter and the Deathly Hallows</li>
+    </ul>
+  
+    <!-- Add item button -->
+    <button id="add-item">Add Item</button>
+  </div>
+  
+  <!-- Script to add new items to the checklist -->
+  <script>
+    const addItemButton = document.getElementById('add-item');
+    const checklistItems = document.getElementById('checklist-items');
+  
+    addItemButton.addEventListener('click', () => {
+      const newItem = document.createElement('li');
+      newItem.contentEditable = true;
+      newItem.textContent = prompt('Enter item name', 'New Item');
+      checklistItems.appendChild(newItem);
+    });
+  
+    // Script to remove an item from the checklist
+    checklistItems.addEventListener('click', (event) => {
+      if (event.target.tagName === 'LI') {
+        checklistItems.removeChild(event.target);
+      }
+    });
+  </script>
+	
+</body>
+</html>
+    
